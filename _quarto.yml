@@ -18,3 +18,4 @@ website:
 format:
   html:
     theme: minty
+    embed-resources: true
