@@ -2,10 +2,13 @@
 title: "Country Analysis"
 ---
 
-This page analyses changes in life expectancy, GDP per capita, and population for a specific country over time.
+This page examines changes in life expectancy, GDP per capita, and population for a specific country over time.
 
 ```{python}
 #| echo: true
+#| warning: false
+#| message: false
+
 import pandas as pd
 import matplotlib.pyplot as plt
 
@@ -34,3 +37,6 @@ plt.xlabel("Year")
 plt.ylabel("Population (millions)")
 plt.title(f"Population Over Time ({country_name})")
 plt.show()
+```
+
+**Analysis:** For this country, life expectancy increases over time. GDP per capita rises substantially, while population also grows, showing simultaneous economic and demographic change.

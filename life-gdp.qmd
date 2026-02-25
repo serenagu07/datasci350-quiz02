@@ -2,19 +2,34 @@
 title: "Life Expectancy and GDP per Capita"
 ---
 
-This page explores the relationship between life expectancy and GDP per capita using the Gapminder dataset.
+This page explores how life expectancy and GDP per capita change over time in the Gapminder dataset.
 
 ```{python}
 #| echo: true
+#| warning: false
+#| message: false
+
 import pandas as pd
 import matplotlib.pyplot as plt
 
 df = pd.read_csv("gapminder.csv")
 
-plt.figure()
-plt.scatter(df["gdp_per_capita"], df["life_expectancy"])
-plt.xlabel("GDP per Capita")
-plt.ylabel("Life Expectancy")
-plt.title("Life Expectancy vs GDP per Capita")
+# Average trends over time (all countries)
+g = df.groupby("year")[["life_expectancy", "gdp_per_capita"]].mean().reset_index()
 
+plt.figure()
+plt.plot(g["year"], g["life_expectancy"])
+plt.xlabel("Year")
+plt.ylabel("Life Expectancy")
+plt.title("Average Life Expectancy Over Time")
 plt.show()
+
+plt.figure()
+plt.plot(g["year"], g["gdp_per_capita"])
+plt.xlabel("Year")
+plt.ylabel("GDP per Capita")
+plt.title("Average GDP per Capita Over Time")
+plt.show()
+```
+
+**Analysis:** Over time, average life expectancy increases and average GDP per capita also increases, suggesting that improvements in economic conditions are associated with longer lifespans.

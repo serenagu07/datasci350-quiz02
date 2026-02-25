@@ -2,10 +2,13 @@
 title: "Life Expectancy and Population"
 ---
 
-This page explores the relationship between life expectancy and population using the Gapminder dataset.
+This page analyses the relationship between life expectancy and population using the Gapminder dataset.
 
 ```{python}
 #| echo: true
+#| warning: false
+#| message: false
+
 import pandas as pd
 import matplotlib.pyplot as plt
 
@@ -18,3 +21,6 @@ plt.ylabel("Life Expectancy")
 plt.title("Life Expectancy vs Population")
 
 plt.show()
+```
+
+**Analysis:** There is no simple linear relationship between population size and life expectancy. Many small and large countries can have both low and high life expectancy.
