@@ -72,7 +72,7 @@ ul.task-list li input[type="checkbox"] {
 
 </head>
 
-<body class="nav-fixed quarto-light">
+<body class="nav-fixed fullcontent quarto-light">
 
 <div id="quarto-search-results"></div>
   <header id="quarto-header" class="headroom fixed-top">
@@ -116,9 +116,7 @@ ul.task-list li input[type="checkbox"] {
 <div id="quarto-content" class="quarto-container page-columns page-rows-contents page-layout-article page-navbar">
 <!-- sidebar -->
 <!-- margin-sidebar -->
-    <div id="quarto-margin-sidebar" class="sidebar margin-sidebar zindex-bottom">
-        
-    </div>
+    
 <!-- main -->
 <main class="content" id="quarto-document-content">
 
@@ -142,10 +140,9 @@ ul.task-list li input[type="checkbox"] {
 
 
 <p>This page explores the relationship between life expectancy and population using the Gapminder dataset.</p>
-<p>#| echo: true #| eval: true</p>
-<p>import pandas as pd import matplotlib.pyplot as plt</p>
+<p>#| echo: true import pandas as pd import matplotlib.pyplot as plt</p>
 <p>df = pd.read_csv(“gapminder.csv”)</p>
-<p>plt.scatter(df[“population_millions”], df[“life_expectancy”]) plt.xlabel(“Population (millions)”) plt.ylabel(“Life Expectancy”) plt.title(“Life Expectancy vs Population”)</p>
+<p>plt.figure() plt.scatter(df[“population_millions”], df[“life_expectancy”]) plt.xlabel(“Population (millions)”) plt.ylabel(“Life Expectancy”) plt.title(“Life Expectancy vs Population”)</p>
 <p>plt.show()</p>
 
 

@@ -18,4 +18,3 @@ website:
 format:
   html:
     theme: minty
-    toc: true

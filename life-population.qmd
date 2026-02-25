@@ -6,13 +6,12 @@ This page explores the relationship between life expectancy and population using
 
 ```{python}
 #| echo: true
-#| eval: true
-
 import pandas as pd
 import matplotlib.pyplot as plt
 
 df = pd.read_csv("gapminder.csv")
 
+plt.figure()
 plt.scatter(df["population_millions"], df["life_expectancy"])
 plt.xlabel("Population (millions)")
 plt.ylabel("Life Expectancy")

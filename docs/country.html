@@ -7,7 +7,7 @@
 <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes">
 
 
-<title>country – DATASCI 350 - Quiz 02</title>
+<title>Country Analysis – DATASCI 350 - Quiz 02</title>
 <style>
 code{white-space: pre-wrap;}
 span.smallcaps{font-variant: small-caps;}
@@ -72,7 +72,7 @@ ul.task-list li input[type="checkbox"] {
 
 </head>
 
-<body class="nav-fixed quarto-light">
+<body class="nav-fixed fullcontent quarto-light">
 
 <div id="quarto-search-results"></div>
   <header id="quarto-header" class="headroom fixed-top">
@@ -116,15 +116,36 @@ ul.task-list li input[type="checkbox"] {
 <div id="quarto-content" class="quarto-container page-columns page-rows-contents page-layout-article page-navbar">
 <!-- sidebar -->
 <!-- margin-sidebar -->
-    <div id="quarto-margin-sidebar" class="sidebar margin-sidebar zindex-bottom">
-        
-    </div>
+    
 <!-- main -->
-<main class="content" id="quarto-document-content"><header id="title-block-header" class="quarto-title-block"></header>
+<main class="content" id="quarto-document-content">
+
+<header id="title-block-header" class="quarto-title-block default">
+<div class="quarto-title">
+<h1 class="title">Country Analysis</h1>
+</div>
 
 
 
+<div class="quarto-title-meta">
 
+    
+  
+    
+  </div>
+  
+
+
+</header>
+
+
+<p>This page analyses changes in life expectancy, GDP per capita, and population for a specific country over time.</p>
+<p>#| echo: true import pandas as pd import matplotlib.pyplot as plt</p>
+<p>df = pd.read_csv(“gapminder.csv”)</p>
+<p>country_name = “China” c = df[df[“country”] == country_name].sort_values(“year”)</p>
+<p>plt.figure() plt.plot(c[“year”], c[“life_expectancy”]) plt.xlabel(“Year”) plt.ylabel(“Life Expectancy”) plt.title(f”Life Expectancy Over Time ({country_name})“) plt.show()</p>
+<p>plt.figure() plt.plot(c[“year”], c[“gdp_per_capita”]) plt.xlabel(“Year”) plt.ylabel(“GDP per Capita”) plt.title(f”GDP per Capita Over Time ({country_name})“) plt.show()</p>
+<p>plt.figure() plt.plot(c[“year”], c[“population_millions”]) plt.xlabel(“Year”) plt.ylabel(“Population (millions)”) plt.title(f”Population Over Time ({country_name})“) plt.show()</p>
 
 
 
